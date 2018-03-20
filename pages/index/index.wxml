@@ -3,7 +3,7 @@
   <!--banner-->
   <swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatColor}}" indicator-active-color="{{indicatotActiveColor}}"
     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
-    <block wx:for="{{imgUrls}}">
+    <block wx:for="{{imgUrls}}" wx:key="{{item}}">
       <swiper-item>
         <image src="{{item}}" class="slide-image" width="100%" height="150"/>
       </swiper-item>
@@ -11,37 +11,9 @@
   </swiper>
   <!--分类导航-->
   <view class="cate_wrap">
-    <view class="cate_item" bindtap='bindViewTap'>
+    <view wx:for="{{cates}}" wx:key="{{item.id}}" wx:for-item="item" class="cate_item" id="{{item.id}}" bindtap='bindViewTap'>
       <view class='bg'></view>
-      <text>设计类</text>
-    </view>
-    <view class="cate_item">
-      <view class='bg'></view>
-      <text>设计类</text>
-    </view>
-    <view class="cate_item">
-      <view class='bg'></view>
-      <text>设计类</text>
-    </view>
-    <view class="cate_item">
-      <view class='bg'></view>
-      <text>设计类</text>
-    </view>
-    <view class="cate_item">
-      <view class='bg'></view>
-      <text>设计类</text>
-    </view>
-    <view class="cate_item">
-      <view class='bg'></view>
-      <text>设计类</text>
-    </view>
-    <view class="cate_item">
-      <view class='bg'></view>
-      <text>设计类</text>
-    </view>
-    <view class="cate_item">
-      <view class='bg'></view>
-      <text>设计类</text>
+      <text>{{item.id}}</text>
     </view>
   </view>
 </view>
