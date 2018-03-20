@@ -1,0 +1,12 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/list/list"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#009ee5",
+    "navigationBarTitleText": "筑加人才网",
+    "navigationBarTextStyle":"white"
+  }
+}
