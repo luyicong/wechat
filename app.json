@@ -8,13 +8,13 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#009ee5",
-    "navigationBarTitleText": "筑加人才网",
+    "navigationBarTitleText": "wechat",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#515151",
     "selectedColor": "#009ee5",
-    "borderStyle": "#515151",
+    "borderStyle": "black",
     "list": [
       {
         "selectedIconPath": "images/pos_selected.png",

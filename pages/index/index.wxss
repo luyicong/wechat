@@ -36,3 +36,56 @@ page{
   display: inline-block;
   font-size: 14px;
 }
+
+.pos_list{
+  width: 100%;
+  overflow: hidden;
+}
+.list_item{
+  display: flex;
+  display: -webkit-flex;
+  height: 160rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  padding:12rpx 15rpx;
+  box-sizing: border-box;
+}
+.left{
+  flex: 3;
+}
+.left>view{
+  height: 46rpx;
+  line-height: 46rpx;
+  font-size:26rpx;
+}
+.left .title{
+  /* font-weight: 600; */
+  color: #000;
+  font-size: 28rpx;
+}
+.left .tags,.com{
+  color: #666;
+}
+.salary{
+  margin-right: 10rpx;
+  color: #ff552e;
+}
+.right{
+  flex: 1;
+  font-size: 24rpx;
+}
+.time{
+  height: 66rpx;
+  line-height: 66rpx;
+  color: #999;
+}
+.btn{
+  width: 80%;
+  border: 2rpx solid #ff552e;
+  height: 40rpx;
+  line-height: 40rpx;
+  border-radius: 20rpx;
+  color: #ff552e;
+  text-align: center;
+  margin-top: 2rpx;
+}

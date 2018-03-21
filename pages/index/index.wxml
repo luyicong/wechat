@@ -1,16 +1,16 @@
 <!--index.wxml-->
 <view class="wrap">
   <!--banner-->
-  <swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatColor}}" indicator-active-color="{{indicatotActiveColor}}"
+  <!--<swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatColor}}" indicator-active-color="{{indicatotActiveColor}}"
     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
     <block wx:for="{{imgUrls}}" wx:key="{{item}}">
       <swiper-item>
         <image src="{{item}}" class="slide-image" width="100%" height="150"/>
       </swiper-item>
     </block>
-  </swiper>
+  </swiper>-->
   <!--分类导航-->
-  <view class="cate_wrap">
+  <!--<view class="cate_wrap">
     <view 
       wx:for="{{cates}}" 
       wx:key="{{item.cate_id}}" 
@@ -21,6 +21,23 @@
     >
       <view class='bg'></view>
       <text>{{item.cate_name}}</text>
+    </view>
+  </view>-->
+  <!--职位列表-->
+  <view class='pos_list'>
+    <view class='list_item' wx:for="{{posList}}" wx:key="{{item.pos_id}}" wx:for-item="item" bindtap='openDetail'>
+      <view class='left'>
+        <view class='row title'>{{item.pos_name}}</view>
+        <view class='row tags'>
+          <text class='salary'>{{item.pos_salary}}</text>
+          <text>{{item.pos_edu}} / {{item.pos_exp}}</text>
+        </view>
+        <view class='row com'>{{item.comp_name}}</view>
+      </view>
+      <view class='right'>
+        <text class='time'>{{item.sendtime}}</text>
+        <view class='btn'>立即投递</view>
+      </view>
     </view>
   </view>
 </view>
