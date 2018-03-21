@@ -1,12 +1,39 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/list/list"
+    "pages/list/list",
+    "pages/companylist/companylist",
+    "pages/user/user"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#009ee5",
     "navigationBarTitleText": "筑加人才网",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#515151",
+    "selectedColor": "#009ee5",
+    "borderStyle": "#515151",
+    "list": [
+      {
+        "selectedIconPath": "images/pos_selected.png",
+        "iconPath": "images/pos.png",
+        "pagePath": "pages/index/index",
+        "text": "职位"
+      },
+      {
+        "selectedIconPath": "images/com_selected.png",
+        "iconPath": "images/com.png",
+        "pagePath": "pages/companylist/companylist",
+        "text": "公司"
+      },
+      {
+        "selectedIconPath": "images/user_selected.png",
+        "iconPath": "images/user.png",
+        "pagePath": "pages/user/user",
+        "text": "我的"
+      }
+    ]
   }
 }

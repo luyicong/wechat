@@ -11,9 +11,16 @@
   </swiper>
   <!--分类导航-->
   <view class="cate_wrap">
-    <view wx:for="{{cates}}" wx:key="{{item.id}}" wx:for-item="item" class="cate_item" id="{{item.id}}" bindtap='bindViewTap'>
+    <view 
+      wx:for="{{cates}}" 
+      wx:key="{{item.cate_id}}" 
+      wx:for-item="item" 
+      class="cate_item" 
+      id="{{item.cate_id}}" 
+      bindtap='bindViewTap'
+    >
       <view class='bg'></view>
-      <text>{{item.id}}</text>
+      <text>{{item.cate_name}}</text>
     </view>
   </view>
 </view>
