@@ -8,9 +8,9 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.91",
+	"libVersion": "1.9.93",
 	"appid": "wxd1d8c2d3b3c30a08",
-	"projectname": "wechat_app",
+	"projectname": "wechat",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

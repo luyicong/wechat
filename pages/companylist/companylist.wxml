@@ -1,2 +1,18 @@
-<!--pages/companylist/companlist.wxml-->
-<text>正在开发中</text>
+<view class="root">
+  <view class='company_list'>
+    <block wx:for="{{companyList}}" wx:key="{{item}}">
+      <view class='list_item'>
+        <view class='item_img'>
+          <image src="../../images/1.png" style="width:120rpx;height:120rpx"></image>
+        </view>
+        <view class='info'>
+          <view class='title'>{{item.comp_name}}</view>
+          <view class='tags'>
+            <text>{{item.comp_type}}/{{item.comp_scale}}</text>
+            <text>招聘职位<text class='color'>{{item.comp_pos_count}}</text>人</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

@@ -48,21 +48,23 @@ Page({
   },
   //打开详情页事件
   openDetail() {
-    wx.showModal({
-      title: '提示',
-      content: '功能正在开发中。。。',
-      confirmColor:'#009ee5',
-      success: function (res) {
-        if (res.confirm) {
-          console.log('用户点击确定')
-        } else if (res.cancel) {
-          console.log('用户点击取消')
-        }
-      }
+    wx.navigateTo({
+      url: '../positiondetail/positiondetail'
     })
+    // wx.showModal({
+    //   title: '提示',
+    //   content: '功能正在开发中。。。',
+    //   confirmColor:'#009ee5',
+    //   success: function (res) {
+    //     if (res.confirm) {
+    //       console.log('用户点击确定')
+    //     } else if (res.cancel) {
+    //       console.log('用户点击取消')
+    //     }
+    //   }
+    // })
   },
-  getIndexData:function(e){
-    _this = this
+  getIndexData (e) {
     wx.request({
       url: `http://talent.yoho167.com/api/v1/position?nowPage=${this.nowPage}`,
       success:(res)=>{

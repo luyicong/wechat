@@ -1,31 +1,18 @@
-// pages/companylist/companlist.js
+// pages/positiondetail/positiondetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    companyList:[]
+  
   },
-  /**
-   * 获取企业列表
-   */
-  getCompanyList() {
-    wx.request({
-      url: `http://talent.yoho167.com/api/v1/company`,
-      success: (res) => {
-        this.setData({
-          companyList: res.data.data
-        })
-        console.log(this.data.companyList)
-      }
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad (options) {
-    this.getCompanyList()
+  onLoad: function (options) {
+  
   },
 
   /**

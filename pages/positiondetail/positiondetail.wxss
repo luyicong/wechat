@@ -1,0 +1,81 @@
+page{
+  height: 100%;
+  background-color: #f0f2f5;
+}
+.root,.detail_wrap{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+.detail_wrap{
+  /* padding: 10px; */
+}
+.title{
+  text-indent: 10rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1px solid #eee;
+  font-size: 30rpx;
+  background-color: #fff;
+}
+.detail_content{
+  width: 100%;
+  padding:10rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.pos_tags{
+  width: 100%;
+  padding: 8rpx 0;
+  display: flex;
+  display: -webkit-flex;
+  box-sizing: border-box;
+}
+.pos_tags text{
+  flex: 1;
+}
+.pos_tags .color{
+  color: red;
+}
+.update_time{
+  margin: 12rpx 0;
+  font-size: 24rpx;
+  color: #666;
+}
+.company_info{
+  width: 100%;
+  box-sizing: border-box;
+  height: 160rpx;
+  padding:15rpx;
+  display: flex;
+  display: -webkit-flex;
+  background-color: #fff;
+  margin:15px 0;
+  overflow: hidden;
+}
+.company_info .item_img{
+  width: 130rpx;
+  height: 130rpx;
+   margin-right: 15rpx; 
+}
+.company_info .info{
+  width: 90%;
+  padding-right: 10rpx;
+}
+.c_title{
+  height: 40rpx;
+  line-height: 40rpx
+}
+.tags{
+  height: 80rpx;
+  margin-top: 10rpx;
+}
+.tags view{
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: #666;
+  overflow: hidden;
+}
