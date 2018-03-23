@@ -1,23 +1,21 @@
 <view class="root">
   <view class='detail_wrap'>
-    <view class='title'>设计师</view>
+    <view class='title'>{{detail.pos_name}}</view>
     <view class='detail_content'>
       <view class='pos_tags'>
-        <text>薪资：<text class='color'>10k-20k</text></text>
-        <text>薪资：10k-20k</text>
-        <text>薪资：10k-20k</text>
+        <text>薪资：<text class='color'>{{detail.pos_salary}}</text></text>
+        <text>学历：{{detail.pos_edu}}</text>
+        <text>性别：{{detail.pos_sex}}</text>
       </view>
       <view class='pos_tags'>
-        <text>薪资：10k-20k</text>
-        <text>薪资：10k-20k</text>
-        <text>薪资：10k-20k</text>
+        <text>经验：{{detail.pos_exp}}</text>
+        <text>性质：{{detail.pos_type}}</text>
+        <text>年龄：{{detail.pos_age}}</text>
       </view>
       <view class='pos_tags'>
-        <text>薪资：10k-20k</text>
-        <text>薪资：10k-20k</text>
-        <text>薪资：10k-20k</text>
+        <text>地点：{{detail.work_address}}</text>
       </view>
-      <view class='update_time'>更新于：3月20日 22:39</view>
+      <view class='update_time'>更新于：{{detail.sendtime}}</view>
     </view>
     <!--企业信息-->
     <view class='company_info'>
@@ -25,14 +23,41 @@
         <image src="../../images/1.png" style="width:130rpx;height:130rpx"></image>
       </view>
       <view class='info'>
-        <view class='c_title'>企业名称</view>
+        <view class='c_title'>{{detail.comp_name}}</view>
         <view class='tags'>
-          <view>100人以上/民营</view>
+          <view>1{{detail.comp_scale}}/{{detail.comp_type}}</view>
           <view>
-            <text>企业简介企业简介企业简介企业简介企业简介企业简介企业简介企业简介企业简介</text>
+            <text>{{detail.comp_desc}}</text>
           </view>
         </view>
       </view>
+    </view>
+    <!--职位描述-->
+    <view class='common_moudle'>
+      <view class='top_title'>职位描述</view>
+      <view class='common_moudle_content'>
+          <rich-text nodes="{{detail.pos_desc}}"></rich-text>
+      </view>
+    </view>
+    <view class='common_moudle'>
+      <view class='top_title'>联系方式<text class='color'>（登录后查看）</text></view>
+      <view class='common_moudle_content'>
+         <view class='common_item'>电话：{{detail.comp_phone}}</view>
+         <view class='common_item'>邮箱：{{detail.comp_email}}</view>
+         <view class='common_item'>地址：{{detail.comp_address}}</view>
+      </view>
+    </view>
+  </view>
+  <!--底部操作菜单-->
+  <view class='bottom_nav'>
+    <view class='collect_wrap'>
+      <view>
+        <image src="../../images/star.png" style="width:64rpx;height:64rpx"></image>
+        <text>收藏</text>
+      </view>
+    </view>
+    <view class='apply_wrap'>
+      <view class='applt_btn'>立即申请</view>
     </view>
   </view>
 </view>

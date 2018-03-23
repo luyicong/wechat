@@ -47,7 +47,8 @@ Page({
     })
   },
   //打开详情页事件
-  openDetail() {
+  openDetail(e) {
+    console.log(e)
     wx.navigateTo({
       url: '../positiondetail/positiondetail'
     })
@@ -71,7 +72,7 @@ Page({
         this.setData({
           posList: res.data.data
         })
-        console.log(this.data.posList)
+        // console.log(this.data.posList)
       }
     })
   },

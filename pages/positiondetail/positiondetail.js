@@ -5,21 +5,37 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    detail:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    console.log(options.id)
+    wx.showLoading({
+      title: '玩命加载中',
+      mask:true
+    })
+    wx.request({
+      url: `http://talent.yoho167.com/api/v1/positionDetail/${options.id || 14}`,
+      success: (res) => {
+        this.setData({
+          detail: res.data.data
+        })
+        setTimeout(()=>{
+          wx.hideLoading()
+        },1000)
+        console.log(this.data.detail)
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-  
+  onReady: function (options) {
+    
   },
 
   /**
