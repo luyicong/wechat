@@ -1,1 +1,68 @@
 /* pages/user/user.wxss */
+page{
+  min-height: 100%;
+  background-color: #f5f5f5;
+}
+.root{
+  width: 100%;
+  overflow: hidden;
+}
+.user_center_top{
+  width: 100%;
+  height: 260rpx;
+  padding:15rpx 0 20px 0;
+  color: #fff;
+  background: -webkit-linear-gradient(-270deg, rgba(0, 158, 229,0.5), rgba(0, 158, 229,1)); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(-270deg, rgba(0, 158, 229,0.5), rgba(0, 158, 229,1)); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(-270deg, rgba(0, 158, 229,0.5), rgba(0, 158, 229,1)); /* Firefox 3.6 - 15 */
+  background: linear-gradient(-270deg, rgba(0, 158, 229,0.5), rgba(0, 158, 229,1)); /* 标准的语法（必须放在最后） */
+}
+.avatar{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius:60rpx;
+  overflow: hidden;
+  margin:10rpx auto;
+  border: 5rpx solid #fff;
+}
+.user_center_top view{
+  text-align: center;
+  font-size: 30rpx;
+}
+.user_center_top .user_name{
+  margin:20rpx 0;
+  font-size: 34rpx;
+}
+.user_center_nav_wrap{
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  margin:30rpx 0;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+.nav_item{
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+.nav_item:last-child{
+  border-bottom: none;
+}
+.nav_item image{
+  float: right;
+  width:40rpx;
+  height:40rpx;
+  margin:25rpx 15rpx 25rpx 0;
+}
+.logout_btn{
+  padding:0 15rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color: #fff;
+  color: #666;
+  font-size:30rpx;
+  text-align: center
+}

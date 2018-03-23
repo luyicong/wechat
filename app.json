@@ -1,9 +1,9 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/user/user",
     "pages/positiondetail/positiondetail",
-    "pages/companylist/companylist",
-    "pages/user/user"
+    "pages/companylist/companylist"
   ],
   "window": {
     "backgroundTextStyle": "dark",

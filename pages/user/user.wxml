@@ -1,2 +1,29 @@
-<!--pages/user/user.wxml-->
-<text>正在开发中</text>
+<view class="root">
+  <view class='user_center_top'>
+    <view class='avatar'>
+      <image src="../../images/1.png" style="width:120rpx;height:120rpx"></image>
+    </view>
+    <view class='user_name'>黄小明</view>
+    <view class='user_motto'>付出不亚于任何人的努力</view>
+  </view>
+  <view class='user_center_nav_wrap'>
+    <view class='nav_item'>
+      <text>我的简历</text>
+      <image src='../../images/arrow_right.png'></image>
+    </view>
+    <view class='nav_item'>
+      <text>投递记录</text>
+      <image src='../../images/arrow_right.png'></image>
+    </view>
+    <view class='nav_item'>
+      <text>收藏记录</text>
+      <image src='../../images/arrow_right.png'></image>
+    </view>
+    <view class='nav_item'>
+      <text>修改密码</text>
+      <image src='../../images/arrow_right.png'></image>
+    </view>
+  </view>
+  <!--退出登录按钮-->
+  <view class='logout_btn'>退出登录</view>
+</view>
