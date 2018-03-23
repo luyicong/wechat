@@ -23,9 +23,7 @@ Page({
         this.setData({
           detail: res.data.data
         })
-        setTimeout(()=>{
-          wx.hideLoading()
-        },1000)
+        wx.hideLoading()
         console.log(this.data.detail)
       }
     })
@@ -35,7 +33,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function (options) {
-    
+    wx.hideLoading()
   },
 
   /**

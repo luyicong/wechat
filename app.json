@@ -6,7 +6,7 @@
     "pages/user/user"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#009ee5",
     "navigationBarTitleText": "wechat",
     "navigationBarTextStyle": "white",

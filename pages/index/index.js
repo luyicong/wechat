@@ -4,40 +4,8 @@ const app = getApp()
 let _this
 Page({
   data: {
-    // imgUrls: [
-    //   'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-    //   'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-    //   'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-    // ],
-    // indicatorDots: true,
-    // autoplay: true,
-    // interval: 2000,
-    // duration: 800,
-    // indicatColor:'rgba(0,0,0,0.4)',
-    // indicatotActiveColor:'#009ee5',
-    // cates:[{id:1},{id:2},{id:3},{id:1},{id:5},{id:6},{id:7},{id:8}]
     posList:[],
     nowPage:1
-  },
-  changeIndicatorDots: function (e) {
-    this.setData({
-      indicatorDots: !this.data.indicatorDots
-    })
-  },
-  changeAutoplay: function (e) {
-    this.setData({
-      autoplay: !this.data.autoplay
-    })
-  },
-  intervalChange: function (e) {
-    this.setData({
-      interval: e.detail.value
-    })
-  },
-  durationChange: function (e) {
-    this.setData({
-      duration: e.detail.value
-    })
   },
   //事件处理函数
   bindViewTap: function(e) {
@@ -46,24 +14,19 @@ Page({
       url: '../list/list'
     })
   },
+  /**
+ * 页面相关事件处理函数--监听用户下拉动作
+ */
+  onPullDownRefresh () {
+    console.log('11111')
+    this.getIndexData()
+  },
   //打开详情页事件
   openDetail(e) {
     console.log(e)
     wx.navigateTo({
       url: '../positiondetail/positiondetail'
     })
-    // wx.showModal({
-    //   title: '提示',
-    //   content: '功能正在开发中。。。',
-    //   confirmColor:'#009ee5',
-    //   success: function (res) {
-    //     if (res.confirm) {
-    //       console.log('用户点击确定')
-    //     } else if (res.cancel) {
-    //       console.log('用户点击取消')
-    //     }
-    //   }
-    // })
   },
   getIndexData (e) {
     wx.request({
@@ -72,7 +35,10 @@ Page({
         this.setData({
           posList: res.data.data
         })
-        // console.log(this.data.posList)
+        setTimeout(()=>{
+          wx.stopPullDownRefresh()
+        },600)
+        
       }
     })
   },
@@ -81,7 +47,6 @@ Page({
     this.getIndexData()
   },
   getUserInfo: function(e) {
-    // console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,

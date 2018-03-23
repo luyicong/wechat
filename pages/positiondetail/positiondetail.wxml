@@ -1,4 +1,4 @@
-<view class="root">
+<view class="root" wx:if="{{detail.pos_name}}">
   <view class='detail_wrap'>
     <view class='title'>{{detail.pos_name}}</view>
     <view class='detail_content'>

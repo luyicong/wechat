@@ -1,1 +1,7 @@
-{}
+{
+  "window": {
+    "backgroundColor": "#fff",
+    "enablePullDownRefresh": false,
+    "backgroundTextStyle": "light"
+  }
+}
