@@ -33,9 +33,20 @@ page{
   display: -webkit-flex;
   box-sizing: border-box;
 }
-.pos_tags text{
+ .pos_tags>text{
+  flex: 1;
+  font-size: 26rpx;
+  color:#555;
+} 
+/* .pos_tags .row_1{
+  flex: 2;
+}
+.pos_tags .row_2{
   flex: 1;
 }
+.pos_tags .row_3{
+  flex: 1;
+} */
 .pos_tags .color{
   color: red;
 }
@@ -90,6 +101,7 @@ page{
   border-bottom: 1px solid #eee;
   text-indent: 10rpx;
   font-weight: 600;
+  color: #444;
 }
 .top_title .color{
   color:#009ee5;

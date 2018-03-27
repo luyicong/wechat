@@ -3,9 +3,9 @@
     <view class='title'>{{detail.pos_name}}</view>
     <view class='detail_content'>
       <view class='pos_tags'>
-        <text>薪资：<text class='color'>{{detail.pos_salary}}</text></text>
-        <text>学历：{{detail.pos_edu}}</text>
-        <text>性别：{{detail.pos_sex}}</text>
+        <text class='row_1'>薪资：<text class='color'>{{detail.pos_salary}}</text></text>
+        <text class='row_2'>学历：{{detail.pos_edu}}</text>
+        <text class='row_3'>性别：{{detail.pos_sex}}</text>
       </view>
       <view class='pos_tags'>
         <text>经验：{{detail.pos_exp}}</text>
