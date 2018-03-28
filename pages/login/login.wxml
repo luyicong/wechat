@@ -1,0 +1,17 @@
+<view class="root">
+  <view class='login_wrapo'>
+      <view class="input_item">
+        <input placeholder="手机号" name="username" bindinput="bindAcountInput" auto-focus/>
+      </view>
+      <view class="input_item">
+        <input placeholder="密码" name="password" password type="text" bindinput="bindPasswordInput"/>
+      </view>
+      <view class='tip'>
+        <text>忘记密码了？</text>
+      </view>
+      <view class='btn_wrap'>
+        <view bindtap='loginEvent'>登录</view>
+        <view bindtap='regist'>注册</view>
+      </view>
+  </view>
+</view>

@@ -1,0 +1,37 @@
+/* pages/collect/collect.wxss */
+.root{
+  width: 100%;
+  overflow: hidden;
+}
+.collect_wrap{
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+.list_item{
+  width: 100%;
+  height: 180rpx;
+  padding:10rpx 60rpx 10rpx 10rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #eee;
+  font-size: 30rpx;
+  color: #999;
+  position: relative;
+}
+.item_title{
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #333;
+}
+.company_name,.collect_time{
+  font-size: 26rpx;
+  height: 46rpx;
+  line-height: 46rpx;
+}
+.list_item image{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 25rpx;
+  right: 20rpx;
+}

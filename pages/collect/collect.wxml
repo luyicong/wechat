@@ -1,0 +1,12 @@
+<view class="root">
+  <view class='collect_wrap'>
+    <block wx:for="{{collectList}}" wx:key="{{item}}">
+      <view class='list_item'>
+        <view class='item_title'>{{item.pos_name}}</view>
+        <view class='company_name'>{{item.comp_name}}</view>
+        <view class='collect_time'>收藏日期：{{item.create_time}}</view>
+        <image src='../../images/close.png' id="{{item.collect_id}}" bindtap="cancelCollect"></image>
+      </view>
+    </block>
+  </view>
+</view>

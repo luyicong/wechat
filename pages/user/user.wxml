@@ -3,7 +3,12 @@
     <view class='avatar'>
       <image src="../../images/1.png" style="width:120rpx;height:120rpx"></image>
     </view>
-    <view class='user_name'>黄小明</view>
+    <view class='user_name' wx:if="{{user.id}}">{{user.realname}}</view>
+    <view class='user_name' wx:else>
+      <navigator class='nav' url="../login/login">登录</navigator>
+      <text>/</text>
+      <navigator class='nav' url="../regist/regist">注册</navigator>
+    </view>
     <view class='user_motto'>付出不亚于任何人的努力</view>
   </view>
   <view class='user_center_nav_wrap'>

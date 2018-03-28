@@ -1,16 +1,19 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/user/user",
+    "pages/index/index",
+    "pages/login/login",
+    "pages/collect/collect",
     "pages/positiondetail/positiondetail",
-    "pages/companylist/companylist"
+    "pages/companylist/companylist",
+    "pages/regist/regist"
   ],
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#009ee5",
     "navigationBarTitleText": "wechat",
     "navigationBarTextStyle": "white",
-    "backgroundColor":"#f5f5f5"
+    "backgroundColor": "#f5f5f5"
   },
   "tabBar": {
     "color": "#515151",

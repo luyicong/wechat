@@ -33,6 +33,11 @@ page{
   margin:20rpx 0;
   font-size: 34rpx;
 }
+.user_name text,.user_name .nav{
+  font-size: 26rpx;
+  margin-right: 10rpx;
+  display: inline-block;
+}
 .user_center_nav_wrap{
   width: 100%;
   overflow: hidden;

@@ -1,36 +1,18 @@
-// pages/user/user.js
+// pages/regist/regist.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    user:{}
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad (options) {
-    wx.showLoading({
-      title: '加载中',
-      mask:true
-    });
-    wx.getStorage({
-      key: 'user',
-      success: (res)=>{
-        console.log(res.data)
-        this.setData({
-          user: res.data
-        })
-        setTimeout(function () {
-          wx.hideLoading()
-        }, 1000)
-      }
-    })
-    setTimeout(function () {
-      wx.hideLoading()
-    }, 1000)
+  onLoad: function (options) {
+  
   },
 
   /**
