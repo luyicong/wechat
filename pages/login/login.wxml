@@ -1,5 +1,5 @@
 <view class="root">
-  <view class='login_wrapo'>
+  <view class='login_wrap'>
       <view class="input_item">
         <input placeholder="手机号" name="username" bindinput="bindAcountInput" auto-focus/>
       </view>
@@ -12,6 +12,11 @@
       <view class='btn_wrap'>
         <view bindtap='loginEvent'>登录</view>
         <view bindtap='regist'>注册</view>
+      </view>
+      <view class='btn_wrap'>
+        <text class='test'>测试账号：18376640435</text>
+        //
+        <text class='test'>测试密码：88888888</text>
       </view>
   </view>
 </view>

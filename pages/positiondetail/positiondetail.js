@@ -5,14 +5,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-    detail:{}
+    detail:{},
+    isApply:false,
+    isCollect:false,
+    star: '../../images/star.png',
+    active_star:'../../images/start_active.png',
+    uid:0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.id)
     wx.showLoading({
       title: '玩命加载中',
       mask:true
@@ -23,12 +27,92 @@ Page({
         this.setData({
           detail: res.data.data
         })
-        wx.hideLoading()
-        console.log(this.data.detail)
+        wx.hideLoading();
+        wx.getStorage({
+          key: 'user',
+          success: (res) => {
+            console.log(res.data)
+            this.setData({
+              uid: res.data.id
+            })
+            wx.request({
+              url: `http://talent.yoho167.com/api/v1/checkCollect?user_id=${res.data.id}&pos_id=${this.data.detail.pos_id}`,
+              success:(res)=>{
+                if(res.data.status){
+                  this.setData({
+                    isCollect: true
+                  })
+                }
+              }
+            })
+            wx.request({
+              url: `http://talent.yoho167.com/api/v1/checkDelivery?user_id=${res.data.id}&pos_id=${this.data.detail.pos_id}`,
+              success: (res) => {
+                if(res.data.status){
+                  this.setData({
+                    isApply: true
+                  })
+                }
+              }
+            })
+          }
+        })
+        // console.log(this.data.detail)
       }
     })
   },
-
+  //投递简历
+  apply() {
+    if (this.data.uid){
+      if (this.data.isApply) return false
+      wx.request({
+        url: `http://talent.yoho167.com/api/v1/deliveryPosition?user_id=${this.data.uid}&pos_id=${this.data.detail.pos_id}`,
+        method:'POST',
+        success: (res)=>{
+          if (res.data.status){
+            wx.showToast({
+              title: '申请成功！',
+              icon: 'success',
+              duration: 2000
+            })
+            this.setData({
+              isApply: true
+            })
+          }
+        }
+      })
+    }else{
+      wx.navigateTo({
+        url: '../login/login',
+      })
+    }
+  },
+  //收藏职位
+  addCollect() {
+    if (this.data.uid) {
+      if (this.data.isCollect) return false
+      wx.request({
+        url: `http://talent.yoho167.com/api/v1/collectPos?user_id=${this.data.uid}&pos_id=${this.data.detail.pos_id}`,
+        method: 'POST',
+        success: (res) => {
+          if (res.data.status) {
+            wx.showToast({
+              title: '收藏成功！',
+              icon: 'success',
+              duration: 2000
+            })
+            this.setData({
+              isCollect: true
+            })
+          }
+        }
+      })
+    } else {
+      wx.navigateTo({
+        url: '../login/login',
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

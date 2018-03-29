@@ -51,13 +51,13 @@
   <!--底部操作菜单-->
   <view class='bottom_nav'>
     <view class='collect_wrap'>
-      <view>
-        <image src="../../images/star.png" style="width:64rpx;height:64rpx"></image>
-        <text>收藏</text>
+      <view bindtap='addCollect'>
+        <image src="{{isCollect?active_star:star}}" style="width:64rpx;height:64rpx"></image>
+        <text class='{{isCollect?"isCollect":""}}'>{{isCollect?'已收藏':'收藏'}}</text>
       </view>
     </view>
     <view class='apply_wrap'>
-      <view class='applt_btn'>立即申请</view>
+      <view class='{{isApply?"isApply applt_btn":"applt_btn"}}' bindtap='apply'>{{isApply?'已投递':'立即申请'}}</view>
     </view>
   </view>
 </view>

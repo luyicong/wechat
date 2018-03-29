@@ -38,7 +38,7 @@ Page({
                 duration: 2000
               })
               setTimeout(() => {
-                wx.navigateBack
+                wx.navigateBack()
               }, 2000)
             }
           })
@@ -54,7 +54,7 @@ Page({
   },
   //注册
   regist() {
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../regist/regist'
     })
   },

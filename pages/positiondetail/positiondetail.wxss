@@ -137,6 +137,9 @@ page{
 .collect_wrap view image,.collect_wrap view text{
   vertical-align: middle;
 }
+.isCollect,.isApply{
+  color: #999;
+}
 .apply_wrap{
   flex: 2;
 }
@@ -150,4 +153,7 @@ page{
   font-size: 28rpx;
   margin:10rpx auto;
   border-radius: 4rpx;
+}
+.applt_btn.isApply{
+  background-color: #ddd;
 }

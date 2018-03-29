@@ -7,7 +7,12 @@ Page({
   data: {
     user:{}
   },
-
+  urlNavigateTo(opt) {
+    // console.log(opt)
+    wx.navigateTo({
+      url: this.data.user.id ? `../${opt.target.id}/${opt.target.id}?uid=${this.data.user.id}` :'../login/login'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -32,7 +37,22 @@ Page({
       wx.hideLoading()
     }, 1000)
   },
-
+  //推出登录事件
+  logout() {
+    wx.removeStorage({
+      key: 'user',
+      success: (res)=> {
+        console.log(res.data)
+        wx.showToast({
+          title: '退出成功！',
+          duration: 2000
+        })
+        this.setData({
+          user: {}
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -44,7 +64,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    wx.getStorage({
+      key: 'user',
+      success: (res) => {
+        console.log(res.data)
+        this.setData({
+          user: res.data
+        })
+        setTimeout(function () {
+          wx.hideLoading()
+        }, 1000)
+      }
+    })
   },
 
   /**

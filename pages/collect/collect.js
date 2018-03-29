@@ -12,16 +12,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad (options) {
+    // console.log(options)
     this.getCollectList()
   },
   //获取收藏列表
   getCollectList() {
+    wx.showLoading({
+      title: '玩命加载中',
+      mask: true
+    })
     wx.request({
       url: `http://talent.yoho167.com/api/v1/collectList/1`,
       success: (res) => {
         this.setData({
           collectList: res.data.data
         })
+        wx.hideLoading()
         console.log(this.data.collectList)
       }
     })

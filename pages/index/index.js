@@ -30,7 +30,7 @@ Page({
   },
   getIndexData (e) {
     wx.request({
-      url: `http://talent.yoho167.com/api/v1/position?nowPage=${this.nowPage}`,
+      url: `http://talent.yoho167.com/api/v1/position?nowPage=${this.data.nowPage}`,
       success:(res)=>{
         this.setData({
           posList: res.data.data

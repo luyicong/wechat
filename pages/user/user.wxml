@@ -5,30 +5,30 @@
     </view>
     <view class='user_name' wx:if="{{user.id}}">{{user.realname}}</view>
     <view class='user_name' wx:else>
-      <navigator class='nav' url="../login/login">登录</navigator>
+      <navigator class='nav' hover-class="none" url="../login/login">登录</navigator>
       <text>/</text>
-      <navigator class='nav' url="../regist/regist">注册</navigator>
+      <navigator class='nav' hover-class="none" url="../regist/regist">注册</navigator>
     </view>
     <view class='user_motto'>付出不亚于任何人的努力</view>
   </view>
   <view class='user_center_nav_wrap'>
-    <view class='nav_item'>
+    <view class='nav_item' id="storeresume" bindtap='urlNavigateTo'>
       <text>我的简历</text>
       <image src='../../images/arrow_right.png'></image>
     </view>
-    <view class='nav_item'>
+    <view class='nav_item' id="deliverylist" bindtap='urlNavigateTo'>
       <text>投递记录</text>
       <image src='../../images/arrow_right.png'></image>
     </view>
-    <view class='nav_item'>
+    <view class='nav_item' id="collect" bindtap='urlNavigateTo'>
       <text>收藏记录</text>
       <image src='../../images/arrow_right.png'></image>
     </view>
-    <view class='nav_item'>
+    <view class='nav_item' id="updatepwd" bindtap='urlNavigateTo'>
       <text>修改密码</text>
       <image src='../../images/arrow_right.png'></image>
     </view>
   </view>
   <!--退出登录按钮-->
-  <view class='logout_btn'>退出登录</view>
+  <view wx:if="{{user.id}}" class='logout_btn' bindtap='logout'>退出登录</view>
 </view>
