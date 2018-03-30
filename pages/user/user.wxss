@@ -47,10 +47,10 @@ page{
   box-sizing: border-box;
 }
 .nav_item{
-  height: 90rpx;
-  line-height: 90rpx;
+  height: 100rpx;
+  line-height: 100rpx;
   font-size: 30rpx;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1rpx solid #eee;
   color: #333;
 }
 .nav_item:last-child{
@@ -64,8 +64,8 @@ page{
 }
 .logout_btn{
   padding:0 15rpx;
-  height: 90rpx;
-  line-height: 90rpx;
+  height: 100rpx;
+  line-height: 100rpx;
   background-color: #fff;
   color: #666;
   font-size:30rpx;
