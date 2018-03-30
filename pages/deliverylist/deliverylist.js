@@ -5,16 +5,55 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    deliveryList:[],
+    uid:0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    console.log(options)
+    this.setData({uid:options.uid})
+    this.getDeliveryList();
   },
-
+  //获取投递列表
+  getDeliveryList() {
+    wx.request({
+      url: `http://talent.yoho167.com/api/v1/deliveryList/${this.data.uid}`,
+      success:(res)=>{
+        console.log(res.data)
+        if (res.data.status){
+          this.setData({
+            deliveryList:res.data.data
+          })
+        }
+      }
+    })
+  },
+  //取消投递
+  cancelDeliery(e) {
+    console.log(e.target.id)
+    wx.request({
+      url: `http://talent.yoho167.com/api/v1/cancelDelivery?d_id=${e.target.id}`,
+      success: (res)=>{
+        if(res.data.status){
+          wx.showToast({
+            title: '取消投递成功',
+            icon: 'none',
+            duration: 2000
+          })
+          setTimeout(() => { this.getDeliveryList() }, 2000)
+        }else{
+          wx.showToast({
+            title: '取消投递失败',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

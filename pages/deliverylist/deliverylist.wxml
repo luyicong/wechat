@@ -1,2 +1,12 @@
-<!--pages/deliverylist/deliverylist.wxml-->
-<text>pages/deliverylist/deliverylist.wxml</text>
+<view class="root">
+  <view class='collect_wrap' wx:if="{{deliveryList.length}}">
+    <block wx:for="{{deliveryList}}" wx:key="{{item}}">
+      <view class='list_item'>
+        <view class='item_title'>{{item.pos_name}}</view>
+        <view class='company_name'>{{item.comp_name}}</view>
+        <view class='collect_time'>投递日期：{{item.create_time}}</view>
+        <image src='../../images/close.png' id="{{item.delivery_id}}" bindtap="cancelDeliery"></image>
+      </view>
+    </block>
+  </view>
+</view>

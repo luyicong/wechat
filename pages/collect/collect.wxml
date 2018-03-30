@@ -1,5 +1,5 @@
 <view class="root">
-  <view class='collect_wrap'>
+  <view class='collect_wrap' wx:if="{{collectList.length}}">
     <block wx:for="{{collectList}}" wx:key="{{item}}">
       <view class='list_item'>
         <view class='item_title'>{{item.pos_name}}</view>
