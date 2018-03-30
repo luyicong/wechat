@@ -31,14 +31,14 @@ Page({
         this.setData({
           user: res.data
         })
-        setTimeout(function () {
-          wx.hideLoading()
-        }, 1000)
+        // setTimeout(function () {
+        //   wx.hideLoading()
+        // }, 1000)
       }
     })
     setTimeout(function () {
       wx.hideLoading()
-    }, 1000)
+    }, 600)
   },
   //推出登录事件
   logout() {

@@ -1,7 +1,7 @@
 <view class="root">
   <view class='login_wrap'>
       <view class="input_item">
-        <input placeholder="手机号" name="username" bindinput="bindAcountInput" auto-focus/>
+        <input placeholder="手机号" name="username" bindinput="bindAcountInput" focus/>
       </view>
       <view class="input_item">
         <input placeholder="密码" name="password" password type="text" bindinput="bindPasswordInput"/>
