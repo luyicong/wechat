@@ -17,6 +17,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad (options) {
+    wx.setNavigationBarTitle({
+      title: '用户中心'
+    });
     wx.showLoading({
       title: '加载中',
       mask:true

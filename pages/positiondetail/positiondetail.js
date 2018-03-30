@@ -12,11 +12,13 @@ Page({
     active_star:'../../images/start_active.png',
     uid:0
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.setNavigationBarTitle({
+      title: '职位详情'
+    });
     wx.showLoading({
       title: '玩命加载中',
       mask:true
