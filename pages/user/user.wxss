@@ -10,7 +10,7 @@ page{
 .user_center_top{
   width: 100%;
   height: 260rpx;
-  padding:15rpx 0 20px 0;
+  padding:15rpx 0 20rpx 0;
   color: #fff;
   background: -webkit-linear-gradient(-270deg, rgba(0, 158, 229,0.5), rgba(0, 158, 229,1)); /* Safari 5.1 - 6.0 */
   background: -o-linear-gradient(-270deg, rgba(0, 158, 229,0.5), rgba(0, 158, 229,1)); /* Opera 11.1 - 12.0 */

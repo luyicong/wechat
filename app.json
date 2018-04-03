@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/storeresume/storeresume",
     "pages/index/index",
     "pages/user/user",
     "pages/login/login",
@@ -8,7 +9,7 @@
     "pages/companylist/companylist",
     "pages/regist/regist",
     "pages/deliverylist/deliverylist",
-    "pages/storeresume/storeresume",
+    
     "pages/updatepwd/updatepwd"
   ],
   "window": {

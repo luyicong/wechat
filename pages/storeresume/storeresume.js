@@ -5,9 +5,46 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    resume:{
+      time: '',
+      nowaddress: '',
+      workstate: ''
+    },
+    statusArr:[
+      '目前已离职，可快速上岗',
+      '目前在职，可考虑换新环境',
+      '观望有好的机会再考虑',
+      '目前暂无跳槽打算',
+      '应届毕业生'
+    ]
   },
-
+  //日期选择
+  timeChange(e) {
+    console.log(e)
+    this.setData({
+      resume:{
+        time: e.detail.value
+      }
+    })
+  },
+  //城市选择
+  addressChange(e) {
+    console.log(e)
+    this.setData({
+      resume:{
+        nowaddress: e.detail.value
+      }
+    })
+  },
+  //目前状态改变
+  statusChange(e) {
+    console.log(e)
+    this.setData({
+      resume:{
+        workstate: this.data.statusArr[e.detail.value]
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

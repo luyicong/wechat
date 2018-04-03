@@ -1,1 +1,56 @@
-/* pages/storeresume/storeresume.wxss */
+
+page,.root{
+  width: 100%;
+  min-height: 100%;
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
+.form_wrap{
+  width: 100%;
+  overflow: hidden;
+  border-top: 1rpx solid #eee;
+  margin-top: 60rpx;
+  background-color: #fff;
+}
+.form_item{
+  height: 90rpx;
+  border-bottom: 1px solid #eee;
+  display: flex;
+}
+.form_label{
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 26rpx;
+  flex: 1;
+  text-align: right;
+}
+.form_input{
+  flex: 4;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.picker_select,.val_empty_tip{
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 28rpx;
+}
+.val_empty_tip{
+  color: #999;
+}
+.input_item{
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 28rpx;
+  padding-left: 5rpx;
+}
+.submit_btn{
+  width: 96%;
+  height: 90rpx;
+  background-color: #009ee5;
+  line-height: 90rpx;
+  margin:30rpx auto;
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+  border-radius: 10rpx;
+}

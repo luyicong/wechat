@@ -1,2 +1,133 @@
-<!--pages/storeresume/storeresume.wxml-->
-<text>pages/storeresume/storeresume.wxml</text>
+<view class="root">
+
+  <view class='form_wrap'>
+
+    <view class='form_item'>
+      <view class='form_label'>
+        <text>姓名：</text>
+      </view>
+      <view class='form_input'>
+        <input value='{{resume.realname}}' class='input_item' bindinput="bindKeyInput" placeholder="姓名"/>
+      </view>
+    </view>
+
+    <view class='form_item'>
+      <view class='form_label'>
+        <text>性别：</text>
+      </view>
+      <view class='form_input'>
+        <label class="radio">
+          <radio value="{{resume.sex}}" checked="{{resume.sex==='男'?true:false}}"/>男
+        </label>
+        <label class="radio">
+          <radio value="{{resume.sex}}" checked="{{resume.sex==='女'?true:false}}"/>女
+        </label>
+      </view>
+    </view>
+
+    <view class='form_item'>
+      <view class='form_label'>
+        <text>出生年月：</text>
+      </view>
+      <view class='form_input'>
+        <picker class='date_select' mode="date" value="{{resume.time}}" start="1970-01-01" end="2017-09-01" bindchange="timeChange">
+          <view class="picker_select" wx:if="{{resume.time}}">{{resume.time}}</view>
+          <view class='val_empty_tip' wx:else>请选择出生年月</view>
+        </picker>
+      </view>
+    </view>
+
+    <view class='form_item'>
+      <view class='form_label'>
+        <text>最高学历：</text>
+      </view>
+      <view class='form_input'>
+        <input class='input_item' bindinput="bindKeyInput" placeholder="最高学历"/>
+      </view>
+    </view>
+
+    <view class='form_item'>
+      <view class='form_label'>
+        <text>工作经验：</text>
+      </view>
+      <view class='form_input'>
+        <input class='input_item' bindinput="bindKeyInput" placeholder="工作经验"/>
+      </view>
+    </view>
+
+    <view class='form_item'>
+      <view class='form_label'>
+        <text>现居住地：</text>
+      </view>
+      <view class='form_input'>
+        <picker mode="region" value="{{resume.nowaddress}}" bindchange="addressChange">
+          <view class="picker_select" wx:if="{{resume.nowaddress}}">{{resume.nowaddress}}</view>
+          <view class='val_empty_tip' wx:else>请选择地址</view>
+        </picker>
+      </view>
+    </view>
+
+  </view>
+
+  <view class='form_wrap'>
+
+    <view class='form_item'>
+      <view class='form_label'>
+        <text>目前状态：</text>
+      </view>
+      <view class='form_input'>
+        <picker bindchange="statusChange" value="{{resume.workstate}}" range="{{statusArr}}">
+          <view class="picker_select">
+            {{resume.workstate}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class='form_item'>
+      <view class='form_label'>
+        <text>工作性质：</text>
+      </view>
+      <view class='form_input'>
+
+      </view>
+    </view>
+
+    <view class='form_item'>
+      <view class='form_label'>
+        <text>期待行业：</text>
+      </view>
+      <view class='form_input'>
+
+      </view>
+    </view>
+
+    <view class='form_item'>
+      <view class='form_label'>
+        <text>期待职位：</text>
+      </view>
+      <view class='form_input'>
+      </view>
+    </view>
+
+    <view class='form_item'>
+      <view class='form_label'>
+        <text>期待薪资：</text>
+      </view>
+      <view class='form_input'>
+      </view>
+    </view>
+
+    <view class='form_item'>
+      <view class='form_label'>
+        <text>工作地区：</text>
+      </view>
+      <view class='form_input'>
+      </view>
+    </view>
+
+  </view>
+
+  <view class='submit_btn'>提交</view>
+
+</view>
