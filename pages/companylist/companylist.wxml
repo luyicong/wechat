@@ -1,7 +1,10 @@
 <view class="root">
   <view class='company_list'>
     <block wx:for="{{companyList}}" wx:key="{{item}}">
-      <view class='list_item'>
+      <navigator 
+          class='list_item' 
+          hover-stay-time='50'
+          url="../companydetail/companydetail?id={{item.comp_id}}">
         <view class='item_img'>
           <image src="../../images/1.png" style="width:120rpx;height:120rpx"></image>
         </view>
@@ -12,7 +15,7 @@
             <text>招聘职位<text class='color'>{{item.comp_pos_count}}</text>人</text>
           </view>
         </view>
-      </view>
+      </navigator>
     </block>
   </view>
 </view>

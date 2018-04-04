@@ -23,7 +23,7 @@ Page({
   //获取投递列表
   getDeliveryList() {
     wx.request({
-      url: `http://talent.yoho167.com/api/v1/deliveryList/${this.data.uid}`,
+      url: `https://talent.jsd618.com/api/v1/deliveryList/${this.data.uid}`,
       success:(res)=>{
         console.log(res.data)
         if (res.data.status){
@@ -38,7 +38,7 @@ Page({
   cancelDeliery(e) {
     console.log(e.target.id)
     wx.request({
-      url: `http://talent.yoho167.com/api/v1/cancelDelivery?d_id=${e.target.id}`,
+      url: `https://talent.jsd618.com/api/v1/cancelDelivery?d_id=${e.target.id}`,
       success: (res)=>{
         if(res.data.status){
           wx.showToast({

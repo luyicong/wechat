@@ -25,7 +25,7 @@ Page({
     console.log(this.data.username)
     console.log(this.data.password)
     wx.request({
-      url: `http://talent.yoho167.com/api/v1/login?user_name=${this.data.username}&password=${this.data.password}`,
+      url: `https://talent.jsd618.com/api/v1/login?user_name=${this.data.username}&password=${this.data.password}`,
       success: (res) => {
         if(res.data.status){
           wx.setStorage({

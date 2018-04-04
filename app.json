@@ -1,6 +1,5 @@
 {
   "pages": [
-    
     "pages/index/index",
     "pages/user/user",
     "pages/login/login",
@@ -10,7 +9,8 @@
     "pages/regist/regist",
     "pages/deliverylist/deliverylist",
     "pages/storeresume/storeresume",
-    "pages/updatepwd/updatepwd"
+    "pages/updatepwd/updatepwd",
+    "pages/companydetail/companydetail"
   ],
   "window": {
     "backgroundTextStyle": "dark",
