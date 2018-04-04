@@ -7,7 +7,7 @@
         <text>姓名：</text>
       </view>
       <view class='form_input'>
-        <input value='{{resume.realname}}' class='input_item' bindinput="bindKeyInput" placeholder="姓名"/>
+        <input value='{{realname}}' class='input_item' bindinput="realnameChange" placeholder="姓名"/>
       </view>
     </view>
 
@@ -16,12 +16,11 @@
         <text>性别：</text>
       </view>
       <view class='form_input'>
-        <label class="radio">
-          <radio value="{{resume.sex}}" checked="{{resume.sex==='男'?true:false}}"/>男
-        </label>
-        <label class="radio">
-          <radio value="{{resume.sex}}" checked="{{resume.sex==='女'?true:false}}"/>女
-        </label>
+        <radio-group class="radio-group" bindchange="sexChange">
+          <label class="radio" wx:for="{{sexArr}}" wx:key="{{item.value}}">
+            <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+          </label>
+        </radio-group>
       </view>
     </view>
 
@@ -30,8 +29,8 @@
         <text>出生年月：</text>
       </view>
       <view class='form_input'>
-        <picker class='date_select' mode="date" value="{{resume.time}}" start="1970-01-01" end="2017-09-01" bindchange="timeChange">
-          <view class="picker_select" wx:if="{{resume.time}}">{{resume.time}}</view>
+        <picker class='date_select' mode="date" value="{{birthy}}" start="1970-01-01" end="2018-01-01" bindchange="timeChange">
+          <view class="picker_select" wx:if="{{birthy}}">{{birthy}}</view>
           <view class='val_empty_tip' wx:else>请选择出生年月</view>
         </picker>
       </view>
@@ -60,8 +59,8 @@
         <text>现居住地：</text>
       </view>
       <view class='form_input'>
-        <picker mode="region" value="{{resume.nowaddress}}" bindchange="addressChange">
-          <view class="picker_select" wx:if="{{resume.nowaddress}}">{{resume.nowaddress}}</view>
+        <picker mode="region" value="{{nowaddress}}" bindchange="addressChange">
+          <view class="picker_select" wx:if="{{nowaddress}}">{{nowaddress}}</view>
           <view class='val_empty_tip' wx:else>请选择地址</view>
         </picker>
       </view>
@@ -76,10 +75,9 @@
         <text>目前状态：</text>
       </view>
       <view class='form_input'>
-        <picker bindchange="statusChange" value="{{resume.workstate}}" range="{{statusArr}}">
-          <view class="picker_select">
-            {{resume.workstate}}
-          </view>
+        <picker bindchange="statusChange" value="{{workstate}}" range="{{statusArr}}">
+          <view class="picker_select" wx:if="{{workstate}}">{{workstate}}</view>
+          <view class='val_empty_tip' wx:else>请选择目前状态</view>
         </picker>
       </view>
     </view>
@@ -89,7 +87,10 @@
         <text>工作性质：</text>
       </view>
       <view class='form_input'>
-
+        <picker bindchange="jobTypeChange" value="{{jobtype}}" range="{{statusArr}}">
+          <view class="picker_select" wx:if="{{jobtype}}">{{jobtype}}</view>
+          <view class='val_empty_tip' wx:else>请选择工作性质</view>
+        </picker>
       </view>
     </view>
 
