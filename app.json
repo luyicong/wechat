@@ -10,7 +10,8 @@
     "pages/deliverylist/deliverylist",
     "pages/storeresume/storeresume",
     "pages/updatepwd/updatepwd",
-    "pages/companydetail/companydetail"
+    "pages/companydetail/companydetail",
+    "pages/search/search"
   ],
   "window": {
     "backgroundTextStyle": "dark",

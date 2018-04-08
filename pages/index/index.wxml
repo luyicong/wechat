@@ -1,5 +1,15 @@
 <scroll-view>
   <view class="wrap">
+    <view class='logo_search_wrap'>
+      <view class='logo'>
+        <image src="../../images/logo.png" style="width:150rpx;height:58rpx"></image>
+      </view>
+      <navigator class='search' url="../search/search">
+        <image src='../../images/search_icon.png' style="width:48rpx;height:48rpx"></image>
+        <!-- <input value='{{keyword}}' class='search_input' bindinput="keywordChange" placeholder="请输入关键字"/> -->
+        <text>请输入关键字搜索</text>
+      </navigator>
+    </view>
     <!--职位列表-->
     <view class='pos_list'>
         <navigator 

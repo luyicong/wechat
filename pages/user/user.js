@@ -38,7 +38,7 @@ Page({
     })
     setTimeout(function () {
       wx.hideLoading()
-    }, 600)
+    }, 400)
   },
   //推出登录事件
   logout() {

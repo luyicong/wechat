@@ -84,9 +84,7 @@ Page({
         }
       })
     }else{
-      wx.navigateTo({
-        url: '../login/login',
-      })
+      this._AlertModal()
     }
   },
   //收藏职位
@@ -110,10 +108,26 @@ Page({
         }
       })
     } else {
-      wx.navigateTo({
-        url: '../login/login',
-      })
+      this._AlertModal()
     }
+  },
+
+  //弹出登录确认框
+  _AlertModal() {
+    wx.showModal({
+      title: '温馨提示',
+      content: '您还没登录，去登录？',
+      confirmColor: '#009ee5',
+      success: function (res) {
+        if (res.confirm) {
+          wx.navigateTo({
+            url: '../login/login',
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
