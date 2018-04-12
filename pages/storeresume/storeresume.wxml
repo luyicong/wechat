@@ -41,7 +41,7 @@
         <text>最高学历：</text>
       </view>
       <view class='form_input'>
-        <input class='input_item' bindinput="bindKeyInput" placeholder="最高学历"/>
+        <input value="{{maxedu}}" class='input_item' bindinput="maxeduChange" placeholder="最高学历"/>
       </view>
     </view>
 
@@ -50,7 +50,7 @@
         <text>工作经验：</text>
       </view>
       <view class='form_input'>
-        <input class='input_item' bindinput="bindKeyInput" placeholder="工作经验"/>
+        <input value="{{workexp}}" class='input_item' bindinput="workexpChange" placeholder="工作经验"/>
       </view>
     </view>
 
@@ -87,7 +87,7 @@
         <text>工作性质：</text>
       </view>
       <view class='form_input'>
-        <picker bindchange="jobTypeChange" value="{{jobtype}}" range="{{statusArr}}">
+        <picker bindchange="jobTypeChange" value="{{jobtype}}" range="{{jobTypeArr}}">
           <view class="picker_select" wx:if="{{jobtype}}">{{jobtype}}</view>
           <view class='val_empty_tip' wx:else>请选择工作性质</view>
         </picker>
@@ -99,7 +99,7 @@
         <text>期待行业：</text>
       </view>
       <view class='form_input'>
-
+        <input value='{{industry}}' class='input_item' bindinput="industryChange" placeholder="期待行业"/>
       </view>
     </view>
 
@@ -108,6 +108,7 @@
         <text>期待职位：</text>
       </view>
       <view class='form_input'>
+        <input value='{{position}}' class='input_item' bindinput="positionChange" placeholder="期待职位"/>
       </view>
     </view>
 
@@ -116,6 +117,7 @@
         <text>期待薪资：</text>
       </view>
       <view class='form_input'>
+        <input value='{{salary}}' class='input_item' bindinput="salaryChange" placeholder="期待薪资"/>
       </view>
     </view>
 
@@ -124,11 +126,12 @@
         <text>工作地区：</text>
       </view>
       <view class='form_input'>
+        <input value='{{workarea}}' class='input_item' bindinput="workareaChange" placeholder="工作地区"/>
       </view>
     </view>
 
   </view>
 
-  <view class='submit_btn'>提交</view>
+  <view class='submit_btn' bindtap='upDateResume'>提交</view>
 
 </view>

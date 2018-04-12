@@ -1,2 +1,4 @@
-<!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<view class="root">
+  <text>搜索功能正在开发中,</text>
+  <text>恭请期待</text>
+</view>

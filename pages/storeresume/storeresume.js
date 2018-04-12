@@ -5,12 +5,24 @@ Page({
    * 页面的初始数据
    */
   data: {
+    user:{
+      realname:'',
+      sex:''
+    },
+    id:0,
+    user_id:0,
+    email:'',
+    user_name:'',
     //姓名
     realname:'',
     //性别
     sex:'',
     //出生年月日
     birthy: '',
+    //最高学历
+    maxedu:'',
+    //工作经验
+    workexp:'',
     //现居住地
     nowaddress: '',
     //目前状态
@@ -19,6 +31,12 @@ Page({
     jobtype:'',
     //期待行业
     industry:'',
+    //期待职位
+    position: '',
+    //期待薪资
+    salary:'',
+    //工作地区
+    workarea:'',
     //目前状态数据
     statusArr:[
       '目前已离职，可快速上岗',
@@ -36,12 +54,12 @@ Page({
     sexArr:[
       {
         name:'男',
-        checked:false,
+        checked:true,
         value:'男'
       },
       {
         name: '女',
-        checked: false,
+        checked: true,
         value: '女'
       }
     ]
@@ -50,15 +68,17 @@ Page({
   realnameChange(e) {
     console.log(e)
     this.setData({
-      realname: e.detail.value
+      realname: e.detail.value,
     })
+    console.log(this.data.user)
   },
   //性别改变
   sexChange(e) {
     console.log(e.detail.value)
     this.setData({
-      sex: e.detail.value
+      sex: e.detail.value,
     })
+    console.log(this.data.user)
   },
   //日期选择
   timeChange(e) {
@@ -67,7 +87,21 @@ Page({
       birthy: e.detail.value
     })
   },
-  //城市选择
+  //最高学历改变
+  maxeduChange(e) {
+    console.log(e)
+    this.setData({
+      maxedu: e.detail.value
+    })
+  },
+  //工作经验改变
+  workexpChange(e) {
+    console.log(e)
+    this.setData({
+      workexp: e.detail.value
+    })
+  },
+  //现居住地选择
   addressChange(e) {
     console.log(e)
     this.setData({
@@ -83,15 +117,120 @@ Page({
   },
   //工作性质改变
   jobTypeChange(e) {
+    console.log(e.detail.value)
     this.setData({
-      jobtype: e.detail.value
+      jobtype: this.data.jobTypeArr[e.detail.value]
+    })
+  },
+  //期待行业
+  industryChange(e) {
+    console.log(e.detail.value)
+    this.setData({
+      industry: e.detail.value
+    })
+  },
+  //期待职位
+  positionChange(e) {
+    console.log(e.detail.value)
+    this.setData({
+      position: e.detail.value
+    })
+  },
+  //期待薪资
+  salaryChange(e) {
+    console.log(e.detail.value)
+    this.setData({
+      salary: e.detail.value
+    })
+  },
+  //工作地区
+  workareaChange(e) {
+    console.log(e.detail.value)
+    this.setData({
+      workarea: e.detail.value
+    })
+  },
+  //提交修改
+  upDateResume() {
+    let resumeData = {
+      id:this.data.id,
+      user_id: this.data.id,
+      email: this.data.email,
+      user_name: this.data.user_name,
+      realname: this.data.realname,
+      sex: this.data.sex,
+      birthy: this.data.birthy,
+      nowaddress: this.data.nowaddress,
+      maxedu: this.data.maxedu,
+      workexp: this.data.workexp,
+      workstate: this.data.workstate,
+      jobtype: this.data.jobtype,
+      industry: this.data.industry,
+      position: this.data.position,
+      salary: this.data.salary,
+      workarea: this.data.workarea
+    }
+    wx.request({
+      url: `https://talent.jsd618.com/api/v1/upDateResume`,
+      method:'POST',
+      data: resumeData,
+      success: (res) => {
+        if (res.data.status) {
+          wx.setStorage({
+            key: "user",
+            data: resumeData,
+            success: () => {
+              wx.showToast({
+                title: '修改成功！',
+                icon: 'success',
+                duration: 2000
+              })
+              setTimeout(() => {
+                wx.navigateBack()
+              }, 2000)
+            }
+          })
+        } else {
+          wx.showToast({
+            title: '修改失败',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      }
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  
+  onLoad(options) {
+    wx.getStorage({
+      key: 'user',
+      success: (res) => {
+        console.log(res.data)
+        this.setData({
+          id:res.data.id,
+          user_id:res.data.user_id,
+          email: res.data.email,
+          user_name:res.data.user_name,
+          realname: res.data.realname,
+          sex: res.data.sex,
+          birthy: res.data.birthy,
+          nowaddress: res.data.nowaddress,
+          maxedu: res.data.maxedu,
+          workexp: res.data.workexp,
+          workstate: res.data.workstate,
+          jobtype: res.data.jobtype,
+          industry: res.data.industry,
+          position: res.data.position,
+          salary: res.data.salary,
+          workarea: res.data.workarea
+        })
+        // setTimeout(function () {
+        //   wx.hideLoading()
+        // }, 1000)
+      }
+    })
   },
 
   /**

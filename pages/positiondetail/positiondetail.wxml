@@ -40,10 +40,10 @@
       </view>
     </view>
     <view class='common_moudle'>
-      <view class='top_title'>联系方式<text class='color'>（登录后查看）</text></view>
+      <view class='top_title'>联系方式<text class='color' wx:if="{{!uid}}">（登录后查看）</text></view>
       <view class='common_moudle_content'>
-         <view class='common_item'>电话：{{detail.comp_phone}}</view>
-         <view class='common_item'>邮箱：{{detail.comp_email}}</view>
+         <view class='common_item'>电话：{{uid?detail.comp_phone:'**********'}}</view>
+         <view class='common_item'>邮箱：{{uid?detail.comp_email:'**********'}}</view>
          <view class='common_item'>地址：{{detail.comp_address}}</view>
       </view>
     </view>

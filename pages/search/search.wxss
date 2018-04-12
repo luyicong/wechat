@@ -1,1 +1,9 @@
-/* pages/search/search.wxss */
+.root{
+  width: 100%;
+  min-height: 100%;
+  text-align: center;
+  padding-top: 300rpx;
+}
+.root text{
+  font-size: 30rpx;
+}

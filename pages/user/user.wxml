@@ -3,7 +3,7 @@
     <view class='avatar'>
       <image src="../../images/1.png" style="width:120rpx;height:120rpx"></image>
     </view>
-    <view class='user_name' wx:if="{{user.id}}">{{user.realname}}</view>
+    <view class='user_name' wx:if="{{user.user_id}}">{{user.realname}}</view>
     <view class='user_name' wx:else>
       <navigator class='nav' hover-class="none" url="../login/login">登录</navigator>
       <text>/</text>
@@ -30,5 +30,5 @@
     </view>
   </view>
   <!--退出登录按钮-->
-  <view wx:if="{{user.id}}" class='logout_btn' bindtap='logout'>退出登录</view>
+  <view wx:if="{{user.user_id}}" class='logout_btn' bindtap='logout'>退出登录</view>
 </view>

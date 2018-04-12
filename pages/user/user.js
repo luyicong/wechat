@@ -31,9 +31,6 @@ Page({
         this.setData({
           user: res.data
         })
-        // setTimeout(function () {
-        //   wx.hideLoading()
-        // }, 1000)
       }
     })
     setTimeout(function () {
