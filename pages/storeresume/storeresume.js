@@ -105,7 +105,7 @@ Page({
   addressChange(e) {
     console.log(e)
     this.setData({
-        nowaddress: e.detail.value
+        nowaddress: e.detail.value.join(',')
     })
   },
   //目前状态改变
