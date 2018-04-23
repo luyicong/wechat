@@ -5,14 +5,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    companydetail:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    wx.setNavigationBarTitle({
+      title: '职位详情'
+    });
+    wx.showLoading({
+      title: '玩命加载中',
+      mask: true
+    })
+    wx.request({
+      url: `https://talent.jsd618.com/api/v1/companyDetail/${options.id}`,
+      success: (res) => {
+        this.setData({
+          companydetail: res.data.data
+        })
+        wx.hideLoading();
+        
+        console.log(this.data.companydetail)
+      }
+    })
   },
 
   /**

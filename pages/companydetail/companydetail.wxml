@@ -1,5 +1,81 @@
 <view class="root">
-  <text>企业详情页功能正在开发中,</text>
-  <text>恭请期待</text>
+  <view class='cd_header'>
+    <view class='haeder_top'>
+      <image class='logo' src='../../images/1.png' style="width:120rpx;height:120rpx"></image>
+    </view>
+    <view class='header_bottom'>
+      <text class='name'>{{companydetail.comp_name}}</text>
+      <view class='tags'>
+        <text>{{companydetail.comp_type}}</text>|
+        <text>{{companydetail.comp_scale}}</text>|
+        <text>{{companydetail.comp_address}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='common_content_moudle'>
+    <view class='item_title'>公司名片</view>
+    <view class='item_content'>
+      <view class='text_item'>
+        <text class='text_item_name'>规模：</text><text class='text_item_value'>{{companydetail.comp_scale}}</text>
+      </view>
+      <view class='text_item'>
+        <text class='text_item_name'>行业：</text><text class='text_item_value'>{{companydetail.comp_industry}}</text>
+      </view>
+      <view class='text_item'>
+        <text class='text_item_name'>地址：</text><text class='text_item_value'>{{companydetail.comp_address}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='common_content_moudle'>
+    <view class='item_title'>公司简介</view>
+    <view class='item_content'>
+      <view class='company_desc'>
+      {{companydetail.comp_desc}}
+      </view>
+    </view>
+  </view>
+
+  <view class='common_content_moudle'>
+    <view class='item_title'>联系方式</view>
+    <view class='item_content'>
+      <view class='text_item'>
+        <text class='text_item_name'>电话：</text><text class='text_item_value'>{{companydetail.comp_phone}}</text>
+      </view>
+      <view class='text_item'>
+        <text class='text_item_name'>邮箱：</text><text class='text_item_value'>{{companydetail.comp_email}}</text>
+      </view>
+      <view class='text_item'>
+        <text class='text_item_name'>地址：</text><text class='text_item_value'>{{companydetail.comp_address}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='common_content_moudle'>
+    <view class='item_title'>该企业正在招聘职位</view>
+    <view class='item_content'>
+      <navigator 
+          class='list_item' 
+          wx:for="{{companydetail.posList}}"
+          wx:key="{{item.pos_id}}" 
+          wx:for-item="item" 
+          hover-stay-time='50'
+          url="../positiondetail/positiondetail?id={{item.pos_id}}">
+          <view class='left'>
+            <view class='row title'>{{item.pos_name}}</view>
+            <view class='row tags'>
+              <text class='salary'>{{item.pos_salary}}</text>
+              <text>{{item.pos_edu}} / {{item.pos_exp}}</text>
+            </view>
+          </view>
+          <view class='right'>
+            <text class='time'>{{item.sendtime}}</text>
+            <view class='btn'>立即投递</view>
+          </view>
+        </navigator>
+    </view>
+  </view>
+
 </view>
 
