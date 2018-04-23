@@ -17,7 +17,7 @@ Page({
         this.setData({
           companyList: res.data.data
         })
-        console.log(this.data.companyList)
+        // console.log(this.data.companyList)
       }
     })
   },

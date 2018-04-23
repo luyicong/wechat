@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    companydetail:{}
+    companydetail:{},
+    uid:0
   },
 
   /**
@@ -13,11 +14,20 @@ Page({
    */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: '职位详情'
+      title: '企业详情'
     });
     wx.showLoading({
       title: '玩命加载中',
       mask: true
+    })
+    wx.getStorage({
+      key: 'user',
+      success: (res) => {
+        console.log(res.data)
+        this.setData({
+          uid: res.data.id
+        })
+      }
     })
     wx.request({
       url: `https://talent.jsd618.com/api/v1/companyDetail/${options.id}`,
@@ -27,7 +37,7 @@ Page({
         })
         wx.hideLoading();
         
-        console.log(this.data.companydetail)
+        // console.log(this.data.companydetail)
       }
     })
   },

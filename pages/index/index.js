@@ -5,7 +5,8 @@ let _this
 Page({
   data: {
     posList:[],
-    nowPage:1
+    nowPage:1,
+    isLoaded:false
   },
   //事件处理函数
   bindViewTap: function(e) {
@@ -18,7 +19,6 @@ Page({
  * 页面相关事件处理函数--监听用户下拉动作
  */
   onPullDownRefresh () {
-    console.log('11111')
     this.getIndexData()
   },
   //打开详情页事件
@@ -35,7 +35,11 @@ Page({
         this.setData({
           posList: res.data.data
         })
+        
         setTimeout(()=>{
+          this.setData({
+            isLoaded: true
+          })
           wx.stopPullDownRefresh()
         },600)
         

@@ -1,4 +1,4 @@
-<scroll-view>
+<scroll-view wx:if="{{isLoaded}}">
   <view class="wrap">
     <view class='logo_search_wrap'>
       <view class='logo'>
@@ -35,3 +35,10 @@
     </view>
   </view>
 </scroll-view>
+  <view class='loading_box' wx:else>
+    <view class='loading_item'></view>
+    <view class='loading_item'></view>
+    <view class='loading_item'></view>
+    <view class='loading_item'></view>
+    <view class='loading_item'></view>
+  </view>
