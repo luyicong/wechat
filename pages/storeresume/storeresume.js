@@ -54,12 +54,12 @@ Page({
     sexArr:[
       {
         name:'男',
-        checked:true,
+        checked:false,
         value:'男'
       },
       {
         name: '女',
-        checked: true,
+        checked: false,
         value: '女'
       }
     ]
@@ -78,7 +78,7 @@ Page({
     this.setData({
       sex: e.detail.value,
     })
-    console.log(this.data.user)
+    console.log(this.data.sex)
   },
   //日期选择
   timeChange(e) {
@@ -225,6 +225,15 @@ Page({
           position: res.data.position,
           salary: res.data.salary,
           workarea: res.data.workarea
+        })
+        
+        this.data.sexArr.forEach((item,index)=>{
+          if (item.name === res.data.sex){
+            var up = "sexArr[" + index + "].checked";//先用一个变量，把(info[0].gMoney)用字符串拼接起来
+            this.setData({
+              [up]:true
+            })
+          }
         })
         // setTimeout(function () {
         //   wx.hideLoading()
