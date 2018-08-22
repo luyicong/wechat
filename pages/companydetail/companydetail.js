@@ -30,7 +30,7 @@ Page({
       }
     })
     wx.request({
-      url: `https://talent.jsd618.com/api/v1/companyDetail/${options.id}`,
+      url: `https://talent.yoho167.com/api/v1/companyDetail/${options.id}`,
       success: (res) => {
         this.setData({
           companydetail: res.data.data

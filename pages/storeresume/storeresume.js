@@ -171,7 +171,7 @@ Page({
       workarea: this.data.workarea
     }
     wx.request({
-      url: `https://talent.jsd618.com/api/v1/upDateResume`,
+      url: `https://talent.yoho167.com/api/v1/upDateResume`,
       method:'POST',
       data: resumeData,
       success: (res) => {

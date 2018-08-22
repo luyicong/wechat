@@ -24,7 +24,7 @@ Page({
       mask:true
     })
     wx.request({
-      url: `https://talent.jsd618.com/api/v1/positionDetail/${options.id || 14}`,
+      url: `https://talent.yoho167.com/api/v1/positionDetail/${options.id || 14}`,
       success: (res) => {
         this.setData({
           detail: res.data.data
@@ -38,7 +38,7 @@ Page({
               uid: res.data.id
             })
             wx.request({
-              url: `https://talent.jsd618.com/api/v1/checkCollect?user_id=${res.data.id}&pos_id=${this.data.detail.pos_id}`,
+              url: `https://talent.yoho167.com/api/v1/checkCollect?user_id=${res.data.id}&pos_id=${this.data.detail.pos_id}`,
               success:(res)=>{
                 if(res.data.status){
                   this.setData({
@@ -48,7 +48,7 @@ Page({
               }
             })
             wx.request({
-              url: `https://talent.jsd618.com/api/v1/checkDelivery?user_id=${res.data.id}&pos_id=${this.data.detail.pos_id}`,
+              url: `https://talent.yoho167.com/api/v1/checkDelivery?user_id=${res.data.id}&pos_id=${this.data.detail.pos_id}`,
               success: (res) => {
                 if(res.data.status){
                   this.setData({
@@ -68,7 +68,7 @@ Page({
     if (this.data.uid){
       if (this.data.isApply) return false
       wx.request({
-        url: `https://talent.jsd618.com/api/v1/deliveryPosition?user_id=${this.data.uid}&pos_id=${this.data.detail.pos_id}`,
+        url: `https://talent.yoho167.com/api/v1/deliveryPosition?user_id=${this.data.uid}&pos_id=${this.data.detail.pos_id}`,
         method:'POST',
         success: (res)=>{
           if (res.data.status){
@@ -92,7 +92,7 @@ Page({
     if (this.data.uid) {
       if (this.data.isCollect) return false
       wx.request({
-        url: `https://talent.jsd618.com/api/v1/collectPos?user_id=${this.data.uid}&pos_id=${this.data.detail.pos_id}`,
+        url: `https://talent.yoho167.com/api/v1/collectPos?user_id=${this.data.uid}&pos_id=${this.data.detail.pos_id}`,
         method: 'POST',
         success: (res) => {
           if (res.data.status) {

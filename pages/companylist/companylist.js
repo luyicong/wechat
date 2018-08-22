@@ -12,7 +12,7 @@ Page({
    */
   getCompanyList() {
     wx.request({
-      url: `https://talent.jsd618.com/api/v1/company`,
+      url: `https://talent.yoho167.com/api/v1/company`,
       success: (res) => {
         this.setData({
           companyList: res.data.data

@@ -25,7 +25,7 @@ Page({
       mask: true
     })
     wx.request({
-      url: `https://talent.jsd618.com/api/v1/collectList/1`,
+      url: `https://talent.yoho167.com/api/v1/collectList/1`,
       success: (res) => {
         this.setData({
           collectList: res.data.data
@@ -40,7 +40,7 @@ Page({
     // console.log(e.target.id)
     // return
     wx.request({
-      url: `https://talent.jsd618.com/api/v1/cancelCollect?c_id=${e.target.id}`,
+      url: `https://talent.yoho167.com/api/v1/cancelCollect?c_id=${e.target.id}`,
       success: (res) => {
         if(res.data.status){
           wx.showToast({
