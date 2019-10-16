@@ -23,7 +23,7 @@ Page({
   },
   //打开详情页事件
   openDetail(e) {
-    console.log(e)
+    // console.log(e)
     wx.navigateTo({
       url: '../positiondetail/positiondetail'
     })
